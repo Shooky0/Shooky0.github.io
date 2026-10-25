@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.2/core.css">
+    <script type="module" src="https://pyscript.net/releases/2026.7.2/core.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_down" />
     <title>Bhargav Thakur</title>
 </head>
@@ -12,7 +14,8 @@
     <div class="parallax">
         <div id="top_main_h1">
             <h1>
-                <span class="hello">Hello, I am </span>
+                <span class="hello">Hello</span>
+                <span>, I am </span>
                 <span class="name">Bhargav Thakur</span>
             </h1>
             <h2>and this is my website.</h2>
@@ -21,10 +24,26 @@
             keyboard_arrow_down
         </span>
     </div>
+<div class="content-section">
+    <div id="chatbot-widget">
+        <h3>FAQ Chatbot</h3>
+        <p class="hint">
+            <strong>Allowed questions:</strong><br>
+            • What is this?<br>
+            • When will the website be completed?<br>
+        </p>
+    
+        <div id="chat-box">
+            <div class="message bot"><strong>Not an AI:</strong> Hello! Ask me one of the questions above.</div>
+        </div>
 
-    <div class="content-section">
-        <p>More content coming soon!</p>
+        <!-- User input area -->
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Type a specific question...">
+            <button id="send-btn">Ask</button>
+        </div>
     </div>
-
+    </div>
+    <script type="py" src="chatbot.py"></script>
 </body>
 </html>
