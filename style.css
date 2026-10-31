@@ -12,6 +12,24 @@
         opacity:1;
     }
 }
+@media (max-width: 600px) {
+    .repo-card {
+        padding: 20px; /* Slightly less padding on phones */
+    }
+    
+    .repo-title {
+        font-size: 22px; /* Scales down the font to fit the screen */
+    }
+    
+    .repo-desc {
+        font-size: 16px;
+    }
+    
+    .repo-avatar {
+        width: 65px;  /* Shrinks the identicon */
+        height: 65px;
+    }
+}
 html{
     scroll-behavior: smooth;
 }
@@ -112,6 +130,7 @@ header{
 .repo-card-left {
     flex: 1;
     padding-right: 20px;
+    min-width: 0px;
 }
 
 .repo-title {
@@ -121,6 +140,7 @@ header{
     color: #000;
     display: flex;
     align-items: center;
+    word-wrap: break-word;
 }
 
 .repo-desc {
