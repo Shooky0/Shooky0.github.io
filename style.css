@@ -4,47 +4,74 @@
     font-family: "moderniz";
     src: url("Moderniz.otf"); 
 }
-@keyframes fade-in{
-    from{
-        opacity:0;
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
-    to{
-        opacity:1;
-    }
-}
-@media (max-width: 600px) {
-    .repo-card {
-        padding: 20px; /* Slightly less padding on phones */
-    }
-    
-    .repo-title {
-        font-size: 22px; /* Scales down the font to fit the screen */
-    }
-    
-    .repo-desc {
-        font-size: 16px;
-    }
-    
-    .repo-avatar {
-        width: 65px;  /* Shrinks the identicon */
-        height: 65px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-html{
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+html {
     scroll-behavior: smooth;
 }
+
 body {
     margin: 0;
+    background-color: #fafafa;
+    color: #222;
+}
 
+/* Floating Glass Header */
+header {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 100;
 }
-a{
-    color:#555;
+
+nav a {
+    color: #444;
     text-decoration: none;
-    font-size: 20px;
-    padding: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 24px;
+    transition: color 0.25s ease;
 }
+
+nav a:hover {
+    color: #e34c26;
+}
+
+/* Hero Section */
 .parallax {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("unsplash.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("unsplash.jpg");
     min-height: 100vh; 
     background-attachment: fixed;
     background-position: center;
@@ -53,78 +80,127 @@ a{
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 0 20px;
 }
 
 #top_main_h1 {
-    margin-top: 40px;
     text-align: center;
     font-family: "Lato", sans-serif;
     z-index: 2;
-    font-size: 25px;
+    font-size: 28px;
     color: #ffffff;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
-.hello{
+
+.hello {
     font-family: "Stack Sans Notch", sans-serif;
     font-weight: 700;
 }
 
 .name {
     font-family: "moderniz", sans-serif;
+    display: inline-block;
     opacity: 0; 
-    animation: fade-in 2s cubic-bezier(0.1, 0.76, 0.55, 0.94) forwards;
+    animation: fade-in 1.8s cubic-bezier(0.1, 0.76, 0.55, 0.94) forwards;
+}
+
+.scroll-down-link {
+    padding: 0;
 }
 
 .material-symbols-outlined {
     position: absolute;
-    bottom: 60px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    color: white; 
-}
-header{
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    padding: 5px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-#about{
-    font-family: "lato", sans-serif;
-}
-#about_head{
-    font-family: "moderniz", sans-serif;
-}
-#about_p{
-    font-size: 20px;
-}
-#project{
-    font-family: "lato", sans-serif;
-}
-#projh1{
-    font-family: "moderniz",sans-serif;
+    color: white;
+    font-size: 42px;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
 }
 
+.material-symbols-outlined:hover {
+    opacity: 1;
+}
+
+/* Content Sections */
 #about, #project {
     max-width: 800px;
-    margin: 80px auto;
+    margin: 100px auto;
     padding: 0 24px;
     font-family: "Lato", sans-serif;
+    scroll-margin-top: 80px;
 }
+
+#about_head, #projh1 {
+    font-family: "moderniz", sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+#about_p {
+    font-size: 20px;
+    line-height: 1.75;
+    color: #444;
+}
+
+.highlight {
+    font-size: 23px;
+    font-weight: 700;
+    color: #111;
+}
+
+.highlight-link {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3572A5;
+    text-decoration: none;
+    padding: 2px 8px;
+    background-color: rgba(53, 114, 165, 0.1);
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.highlight-link:hover {
+    background-color: #3572A5;
+    color: #fff;
+}
+
+/* Repository Card */
+.repo-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    padding: 0;
+}
+
 .repo-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f6f6f6; /* Light gray background */
-    border: 2px solid #000000;
-    border-radius: 20px; /* Rounded corners */
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
     padding: 30px;
-    max-width: 600px;
     width: 100%;
-    margin: 20px 0;
+    margin: 10px 0;
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
+    border-color: #d1d5db;
 }
 
 .repo-card-left {
@@ -134,66 +210,91 @@ header{
 }
 
 .repo-title {
-    font-size: 32px;
-    font-weight: 400;
+    font-size: 26px;
+    font-weight: 700;
     margin: 0 0 10px 0;
-    color: #000;
+    color: #111;
     display: flex;
     align-items: center;
     word-wrap: break-word;
 }
 
 .repo-desc {
-    font-size: 18px;
-    margin: 0 0 25px 0;
-    color: #000;
+    font-size: 17px;
+    margin: 0 0 24px 0;
+    color: #555;
 }
 
-/* Update the container to be a flex row */
+/* Language Progress Bar */
 .repo-progress-container {
     width: 100%;
-    height: 12px;
-    display: flex; /* Stacks language segments horizontally */
+    height: 10px;
+    display: flex;
     border-radius: 10px;
-    overflow: hidden; /* Keeps the rounded corners intact */
-    margin-bottom: 10px;
-    background-color: #e0e0e0; /* Fallback background */
+    overflow: hidden;
+    margin-bottom: 14px;
+    background-color: #e5e7eb;
 }
 
-/* The individual language blocks */
 .repo-progress-segment {
     height: 100%;
 }
 
-/* The text below the bar */
 .repo-stats-container {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     font-size: 14px;
-    color: #000;
+    font-weight: 500;
+    color: #222;
 }
 
-/* The little colored circle next to the language name */
 .stat-dot {
     display: inline-block;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    margin-right: 4px;
+    margin-right: 6px;
 }
 
 .repo-card-right {
-    flex-shrink: 0; /* Prevents the avatar from shrinking */
+    flex-shrink: 0;
 }
 
 .repo-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Makes it a circle */
-    border: 1px solid #000;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
     object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
-.fa-brands.fa-python {
-    size: 0px;
+
+/* Mobile Responsiveness (Placed at the bottom so it overrides desktop styles) */
+@media (max-width: 600px) {
+    #top_main_h1 {
+        font-size: 20px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 8px 14px;
+    }
+
+    .repo-card {
+        padding: 20px;
+    }
+    
+    .repo-title {
+        font-size: 20px;
+    }
+    
+    .repo-desc {
+        font-size: 15px;
+    }
+    
+    .repo-avatar {
+        width: 65px;
+        height: 65px;
+    }
 }

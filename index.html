@@ -23,38 +23,43 @@
                 <span class="name">Bhargav Thakur</span>
             </h1>
         </div>
-        <a href="#about"><span class="material-symbols-outlined">
-            keyboard_arrow_down
-        </span></a>
+        <a href="#about" class="scroll-down-link">
+            <span class="material-symbols-outlined">
+                keyboard_arrow_down
+            </span>
+        </a>
     </div>
     <div id="about">
         <h1 id="about_head">About me:</h1>
         <p id="about_p">
-            I am <span style="font-size: 25px;">Bhargav Thakur</span>, a student that shows intrests in computers and programming languages. I currently have a busy routine due to acedemic reasons, but whenever I get time, I try to be active on my website and learn something new. This website is integrated with my Github profile <span style="font-size: 25px;">Shooky0</span> to showcase my learning.
+            I am <span class="highlight">Bhargav Thakur</span>, a student that shows interests in computers and programming languages. I currently have a busy routine due to academic reasons, but whenever I get time, I try to be active on my website and learn something new. This website is integrated with my Github profile <a href="https://github.com/Shooky0" target="_blank" class="highlight-link">Shooky0</a> to showcase my learning.
         </p>
     </div>
     <div id="project">
         <h1 id="projh1">My Projects:</h1>
         <div class="projcard_python">
-          <div class="repo-card">
-    
-    <!-- LEFT SIDE: Text, Bar, and Stats -->
-    <div class="repo-card-left">
-        <h2 class="repo-title">
-            <i class="fa-brands fa-python" style="font-size: 28px; margin-right: 5px;"></i>PythonDevelopment
-        </h2>
-        <p class="repo-desc">My most prized <del>possession</del> repository</p>
-        
-        <div class="repo-progress-container" id="repo-languages-bar"></div>
-        <div class="repo-stats-container" id="repo-languages-stats"></div>
-    </div>
-    
-    <!-- RIGHT SIDE: The Avatar -->
-    <div class="repo-card-right">
-        <img src="https://github.com/identicons/shooky0.png" alt="GitHub Identicon" class="repo-avatar">
-    </div>
+            <a href="https://github.com/Shooky0/PythonDevelopment" target="_blank" class="repo-card-link">
+                <div class="repo-card">
+                    
+                    <!-- LEFT SIDE: Text, Bar, and Stats -->
+                    <div class="repo-card-left">
+                        <h2 class="repo-title">
+                            <i class="fa-brands fa-python" style="font-size: 28px; margin-right: 10px; color: #3572A5;"></i>PythonDevelopment
+                        </h2>
+                        <p class="repo-desc">My most prized <del>possession</del> repository</p>
+                        
+                        <div class="repo-progress-container" id="repo-languages-bar"></div>
+                        <div class="repo-stats-container" id="repo-languages-stats"></div>
+                    </div>
+                    
+                    <!-- RIGHT SIDE: The Avatar -->
+                    <div class="repo-card-right">
+                        <img src="https://github.com/identicons/shooky0.png" alt="GitHub Identicon" class="repo-avatar">
+                    </div>
 
-</div>
+                </div>
+            </a>
+        </div>
     </div>
     <script src="https://kit.fontawesome.com/4d5a808bed.js" crossorigin="anonymous"></script>
     <script>
@@ -102,7 +107,7 @@
 
                 // Create the text statistic below the bar
                 const statItem = document.createElement('div');
-                statItem.innerHTML = `<span class="stat-dot" style="background-color: ${color}"></span>${language} <span style="color: #555;">${percentage}%</span>`;
+                statItem.innerHTML = `<span class="stat-dot" style="background-color: ${color}"></span>${language} <span style="color: #666;">${percentage}%</span>`;
                 statsContainer.appendChild(statItem);
             }
         } catch (error) {
@@ -113,7 +118,6 @@
 
     // Run the function when the page loads
     fetchGitHubLanguages();
-</script>
-
+    </script>
 </body>
 </html>
