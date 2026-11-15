@@ -10,40 +10,30 @@
 <body>
 <header>
   <nav>
-    <a href="index.html#home">Home</a>  
-    <a href="index.html#about">About</a>  
+    <a href="index.html#home">Home</a>
+    <a href="index.html#about">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
-    <div class="contact" style="max-width: 800px; margin: 120px auto; padding: 0 24px; text-align: center; font-family: 'Lato', sans-serif;">
-        <h1 id="contact_h1" style="font-family: 'moderniz', sans-serif;">
-            Contact me!
-        </h1>
-        <h3 style="color: #666; font-weight: 400;">In Progress....</h3>
-    </div>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="contact.css" />
-    <title>Contact - Bhargav Thakur</title>
-</head>
-<body>
-<header>
-  <nav>
-    <a href="index.html#home">Home</a>  
-    <a href="index.html#about">About</a>  
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-    <div class="contact" style="max-width: 800px; margin: 120px auto; padding: 0 24px; text-align: center; font-family: 'Lato', sans-serif;">
-        <h1 id="contact_h1" style="font-family: 'moderniz', sans-serif;">
-            Contact me!
-        </h1>
-        <h3 style="color: #666; font-weight: 400;">In Progress....</h3>
-    </div>
+<div class="contact-container">
+    <h1 class="headofsec">Contact Me</h1>
+    <p>If you have any questions, feedback, or just want to say hi, feel free to reach out!</p>
+
+    <form class="contact-form" action="https://formspree.io/f/xdegeeqp" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+</div>
 </body>
 </html>
