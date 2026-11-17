@@ -1,6 +1,13 @@
+.contact-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .contact-container {
+    flex: 1;
     max-width: 600px;
-    margin: 120px auto;
+    margin: 120px auto 40px;
     padding: 0 24px;
     text-align: center;
     font-family: 'Lato', sans-serif;
